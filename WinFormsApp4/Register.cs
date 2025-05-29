@@ -25,8 +25,6 @@ namespace WinFormsApp4
                 return;
             }
 
-            string hashedPassword = HashPassword(password);
-
             try
             {
                 using (var conn = new NpgsqlConnection(connString))
@@ -50,12 +48,15 @@ namespace WinFormsApp4
                     {
                         cmd.Parameters.AddWithValue("email", email);
                         cmd.Parameters.AddWithValue("user", username);
-                        cmd.Parameters.AddWithValue("pass", hashedPassword);
+                        cmd.Parameters.AddWithValue("pass", password);
 
                         int result = cmd.ExecuteNonQuery();
                         if (result == 1)
                         {
                             MessageBox.Show("Registrasi berhasil!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Form1 form1 = new Form1();
+                            this.Hide();
+                            form1.ShowDialog();
                             this.Close();
                         }
                         else
@@ -71,14 +72,6 @@ namespace WinFormsApp4
             }
         }
 
-        private string HashPassword(string password)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return Convert.ToBase64String(bytes);
-            }
-        }
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -114,8 +107,33 @@ namespace WinFormsApp4
         {
             this.Hide();
             Form1 form1 = new Form1();
-            form1.ShowDialog();
-            this.Show();
+            form1.Show();
+            //this.Close();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

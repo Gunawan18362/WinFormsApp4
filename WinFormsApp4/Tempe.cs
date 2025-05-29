@@ -1,4 +1,4 @@
-﻿using CIHUYYY;
+﻿//using masuk;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using CIHUYYY;
 
 namespace WinFormsApp4
 {
@@ -15,16 +16,17 @@ namespace WinFormsApp4
     {
         string username;
 
-        Database Mahasigma = new Database();
-        public Form2()
+        masuk.Database Mahasigma = new masuk.Database();
+        public Form2(string username)
         {
             InitializeComponent();
             this.username = username;
+            this.Load += Form2_Load;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            label1.Text = $"Hala Madrid {this.username}!!";
+            label1.Text = $"Selamat Datang {this.username}";
 
             label2.Text = Mahasigma.daftarMahasiswa[0].nama;
             label3.Text = Mahasigma.daftarMahasiswa[0].nim;
@@ -53,6 +55,40 @@ namespace WinFormsApp4
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboard = new Dashboard(this.username);
+            dashboard.ShowDialog();
+            this.Show();
+            this.Close();
+        }
+
+        private void Form2_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }

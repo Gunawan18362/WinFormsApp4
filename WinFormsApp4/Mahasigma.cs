@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using CIHUYYY;
 
-namespace CIHUYYY
+namespace masuk
 {
-    class Database
+    internal class Database 
     {
-        public List<Mahasiswa> daftarMahasiswa = [new Mahasiswa("Sopo", "3051"), new Mahasiswa("Udud", "5130")];
+        public List<Mahasiswa> daftarMahasiswa = [new Mahasiswa("Ibu Hamil", "3051"), new Mahasiswa("Gejala Umum", "5130")];
     }
 }
 public class Mahasiswa
