@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using fitur_gejalaumum;
+using Ibu_hamil;
 //using CIHUYYY;
 
 namespace WinFormsApp4
@@ -96,7 +97,10 @@ namespace WinFormsApp4
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Form11 form = new Form11();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

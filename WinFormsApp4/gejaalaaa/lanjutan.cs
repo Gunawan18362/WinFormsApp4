@@ -6,11 +6,6 @@ using System.Threading.Tasks;
 
 namespace fitur_gejalaumum
 {
-    //public class Lanjutan
-    //{
-    //    public int id { get; set; }
-    //    public string GejalaLanjutan { get; set; }
-    //}
 
     public class Lanjutan : Konsultasi
     {

@@ -13,7 +13,7 @@ namespace WinFormsApp4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string connString = "Host=localhost;Port=5432;Username=postgres;Password=1234;Database=well";
+            string connString = "Host=localhost;Port=5432;Username=postgres;Password=Gun180106;Database=anjir";
 
             string email = textBox1.Text.Trim();
             string username = textBox2.Text.Trim();
