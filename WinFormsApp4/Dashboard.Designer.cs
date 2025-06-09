@@ -80,7 +80,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(0, 124, 249);
-            label1.Location = new Point(63, 82);
+            label1.Location = new Point(73, 82);
             label1.Name = "label1";
             label1.Size = new Size(99, 22);
             label1.TabIndex = 1;
