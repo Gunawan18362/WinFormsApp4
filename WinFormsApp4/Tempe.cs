@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using fitur_gejalaumum;
 //using CIHUYYY;
 
 namespace WinFormsApp4
@@ -61,6 +63,10 @@ namespace WinFormsApp4
 
         private void button2_Click(object sender, EventArgs e)
         {
+            gejala gj = new gejala();
+            this.Hide();
+            gj.ShowDialog();
+            this.Close();
 
         }
 

@@ -53,7 +53,7 @@ namespace WinFormsApp4
             if (textBox1.Text != "" && textBox3.Text != "")
             {
 
-                using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=daffa21122005;Database=coba;port=5432"))
+                using (var conn = new NpgsqlConnection("Host=localhost;Port=5432;Username=postgres;Password=1234;Database=well"))
                 {
                     conn.Open();
                     string query = "SELECT user_id, username FROM users WHERE username = @username";
@@ -87,7 +87,7 @@ namespace WinFormsApp4
 
         private bool authLogin(string username, string password)
         {
-            NpgsqlConnection conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=daffa21122005;Database=coba;port = 5432");
+            NpgsqlConnection conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1234;Database=well;port = 5432");
             conn.Open();
             NpgsqlCommand npgsqlCommand = new NpgsqlCommand();
             npgsqlCommand.Connection = conn;
