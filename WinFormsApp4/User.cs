@@ -7,9 +7,9 @@ namespace WinFormsApp4
         public static int Id { get; set; }
         public static string Username { get; set; }
 
-        public static void UpdateUsername(string newUsername)
+        public static void UpdateUsername(string UsernameBaru)
         {
-            Username = newUsername;
+            Username = UsernameBaru;
         }
 
     }

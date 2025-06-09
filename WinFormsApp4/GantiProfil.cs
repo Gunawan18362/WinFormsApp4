@@ -27,17 +27,7 @@ namespace WinFormsApp4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string usernameBaru = textBox2.Text.Trim();
-            string usernameLamaInput = textBox1.Text.Trim();
-            
-
-
-
-            if (usernameLamaInput != User.Username)
-            {
-                MessageBox.Show("Username lama tidak cocok.", "Peringatan");
-                return;
-            }
+            string usernameBaru = textBox1.Text.Trim();
 
             if (string.IsNullOrEmpty(usernameBaru))
             {
@@ -64,11 +54,6 @@ namespace WinFormsApp4
             {
                 MessageBox.Show("Gagal mengubah username di database.", "Error");
             }
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

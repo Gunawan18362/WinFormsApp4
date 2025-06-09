@@ -47,6 +47,8 @@ namespace WinFormsApp4
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string username = textBox1.Text.Trim();
+            string password = textBox3.Text.Trim();
 
             if (textBox1.Text != "" && textBox3.Text != "")
             {

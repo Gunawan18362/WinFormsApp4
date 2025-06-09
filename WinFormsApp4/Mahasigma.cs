@@ -9,7 +9,7 @@ namespace masuk
 {
     internal class Database 
     {
-        public List<Mahasiswa> daftarMahasiswa = [new Mahasiswa("Ibu Hamil", "3051"), new Mahasiswa("Gejala Umum", "5130")];
+        public List<Mahasiswa> daftarMahasiswa = [new Mahasiswa("Ibu Hamil", ""), new Mahasiswa("Gejala Umum", "")];
     }
 }
 public class Mahasiswa

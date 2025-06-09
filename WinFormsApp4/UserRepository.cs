@@ -1,28 +1,60 @@
-﻿using System;
-using Npgsql;
+﻿using Npgsql;
+using System;
+using System.Windows.Forms;
 
 namespace WinFormsApp4
 {
-    internal class UserRepository
+    public class UserRepository
     {
-        private string connString = "Host=localhost;Port=5432;Username=postgres;Password=daffa21122005;Database=coba";
+        private readonly string connectionString = "Host=localhost;Username=postgres;Password=daffa21122005;Database=coba;Port=5432";
 
-        public bool UpdateUsername(int userId, string newUsername)
+        public bool UpdateUsername(int userId, string usernameBaru)
         {
-            using (var conn = new NpgsqlConnection(connString))
+            try
             {
-                conn.Open();
-                string query = "UPDATE users SET username = @username WHERE user_id = @user_id";
-
-
-                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var conn = new NpgsqlConnection(connectionString))
                 {
-                    cmd.Parameters.AddWithValue("@username", newUsername);
-                    cmd.Parameters.AddWithValue("@user_id", userId);
+                    conn.Open();
+                    string query = "UPDATE users SET username = @username WHERE user_id = @userId";
 
-                    var affectedRows = cmd.ExecuteNonQuery();
-                    return affectedRows > 0;
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", usernameBaru);
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Update Gagal: " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool UsernameExists(string username)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM users WHERE username = @username";
+
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        long count = (long)cmd.ExecuteScalar();
+                        return count > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cek Username Gagal: " + ex.Message);
+                return false;
             }
         }
     }

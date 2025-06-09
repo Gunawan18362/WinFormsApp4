@@ -67,11 +67,6 @@ namespace WinFormsApp4
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             pnlNav.Height = button1.Height;
@@ -98,6 +93,11 @@ namespace WinFormsApp4
             pnlNav.Top = btnHome.Top;
             pnlNav.Left = btnHome.Left;
             btnHome.BackColor = Color.FromArgb(46, 51, 73);
+
+            this.Hide();
+            Form2 home = new Form2(this.username);
+            home.ShowDialog();
+            this.Close();
         }
 
         private void btnHome_Leave(object sender, EventArgs e)
@@ -123,28 +123,6 @@ namespace WinFormsApp4
         private void button4_Leave(object sender, EventArgs e)
         {
             button4.BackColor = Color.FromArgb(46, 51, 73);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            pnlNav.Height = button2.Height;
-            pnlNav.Top = button2.Top;
-            pnlNav.Left = button2.Left;
-            button2.BackColor = Color.FromArgb(46, 51, 73);
-
-            using (var gantiForm = new GantiProfil())
-            {
-                var result = gantiForm.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    this.username = User.Username;
-                    label1.Text = this.username;
-                }
-            }
-        }
-        private void button2_Leave(object sender, EventArgs e)
-        {
-            button2.BackColor = Color.FromArgb(46, 51, 73);
         }
 
     }

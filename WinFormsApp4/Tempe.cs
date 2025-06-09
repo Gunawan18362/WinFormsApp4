@@ -29,9 +29,9 @@ namespace WinFormsApp4
             label1.Text = $"Selamat Datang {this.username}";
 
             label2.Text = Mahasigma.daftarMahasiswa[0].nama;
-            label3.Text = Mahasigma.daftarMahasiswa[0].nim;
+            //label3.Text = Mahasigma.daftarMahasiswa[0].nim;
             label4.Text = Mahasigma.daftarMahasiswa[1].nama;
-            label5.Text = Mahasigma.daftarMahasiswa[1].nim;
+            //label5.Text = Mahasigma.daftarMahasiswa[1].nim;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -89,6 +89,21 @@ namespace WinFormsApp4
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
