@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             panel1 = new Panel();
-            button2 = new Button();
             pnlNav = new Panel();
             panel2 = new Panel();
-            label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             button4 = new Button();
@@ -47,7 +45,6 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(23, 30, 54);
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(pnlNav);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(button4);
@@ -57,22 +54,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(235, 604);
             panel1.TabIndex = 0;
-            // 
-            // button2
-            // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Nirmala UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(0, 124, 249);
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(6, 265);
-            button2.Name = "button2";
-            button2.Size = new Size(226, 55);
-            button2.TabIndex = 6;
-            button2.Text = "Change Profil";
-            button2.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // pnlNav
             // 
@@ -86,7 +67,6 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(23, 30, 54);
-            panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(pictureBox1);
             panel2.Location = new Point(0, 0);
@@ -95,24 +75,12 @@
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint_1;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(0, 124, 249);
-            label2.Location = new Point(85, 137);
-            label2.Name = "label2";
-            label2.Size = new Size(64, 22);
-            label2.TabIndex = 1;
-            label2.Text = "E-mail";
-            label2.Click += label2_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(0, 124, 249);
-            label1.Location = new Point(68, 82);
+            label1.Location = new Point(63, 82);
             label1.Name = "label1";
             label1.Size = new Size(99, 22);
             label1.TabIndex = 1;
@@ -153,7 +121,7 @@
             button1.Font = new Font("Nirmala UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(0, 124, 249);
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(9, 326);
+            button1.Location = new Point(6, 251);
             button1.Name = "button1";
             button1.Size = new Size(226, 55);
             button1.TabIndex = 2;
@@ -170,7 +138,7 @@
             btnHome.Font = new Font("Nirmala UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHome.ForeColor = Color.FromArgb(0, 124, 249);
             btnHome.Image = Properties.Resources.Home_Page1;
-            btnHome.Location = new Point(6, 206);
+            btnHome.Location = new Point(3, 192);
             btnHome.Name = "btnHome";
             btnHome.Size = new Size(226, 53);
             btnHome.TabIndex = 1;
@@ -204,10 +172,8 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Button btnHome;
-        private Label label2;
         private Button button1;
         private Button button4;
         private Panel pnlNav;
-        private Button button2;
     }
 }
